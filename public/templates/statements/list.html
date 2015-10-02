@@ -1,0 +1,29 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<a href="#/{{username}}/applications/{{applicationId}}/entities/{{entityId}}/fields/{{fieldId}}/fieldScripts/list" class="btn btn-danger pull-left f360-navbar-button">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a href="#/{{username}}/applications/{{applicationId}}/entities/{{entityId}}/fields/{{fieldId}}/fieldScripts/{{parentId}}/statements/new" class="btn btn-success pull-right f360-navbar-button">
+			<span class="glyphicon glyphicon-plus"></span>
+		</a>
+		<div class="navbar-header">
+			<span class="navbar-brand">Statements</span>
+		</div>
+	</div>
+</div>
+<table class="table">
+	<tr ng-repeat="result in results">
+		<td>
+			<a class="pull-right" href="#/{{username}}/applications/{{applicationId}}/entities/{{entityId}}/fields/{{fieldId}}/fieldScripts/{{parentId}}/statements/{{result._id}}/edit">
+				<span class="glyphicon glyphicon-pencil f360-right-arrow"></span>
+			</a>
+			<a href="#/{{username}}/applications/{{applicationId}}/entities/{{entityId}}/fields/{{fieldId}}/fieldScripts/{{parentId}}/statements/{{result._id}}/edit">
+			{{result.name}}
+			</a>
+		</tr>
+	</tr>
+</table>

@@ -1,0 +1,30 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<a href="#/view/{{username}}/{{application}}/{{previousState}}/{{parentCollection}}/{{parentId}}/view" class="btn btn-danger pull-left f360-navbar-button">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a href="#/new/{{username}}/{{application}}/{{state}}/{{collection}}" class="btn btn-success pull-right f360-navbar-button">
+			<span class="glyphicon glyphicon-plus"></span>
+		</a>
+		<div class="navbar-header">
+			<span class="navbar-brand">List {{collection}}</span>
+		</div>
+	</div>
+</div>
+<table class="table">
+	<tr ng-repeat="instance in instances">
+		<td>
+			<a href="#/view/{{username}}/{{application}}/{{state}}/{{collection}}/{{instance._id}}/view" class="pull-right">
+				<span class="glyphicon glyphicon-chevron-right f360-right-arrow"></span>
+			</a>
+			<!--a href="#/{{username}}/applications/{{application._id}}/entities/list"-->
+			<a href="#/view/{{username}}/{{application}}/{{state}}/{{collection}}/{{instance._id}}/view">
+				<span ng-bind-html="instance.label"></span><br/>
+			</a>
+		</tr>
+	</tr>
+</table>

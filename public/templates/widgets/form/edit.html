@@ -1,0 +1,42 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<style>
+	.f360-navbar-button {
+		position: relative;
+		top: 7px;
+	}
+</style>
+
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<a	href="#/{{username}}/applications/{{applicationId}}/pages/{{pageId}}/widgets/list" class="btn btn-danger pull-left f360-navbar-button">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a	href="#" class="btn btn-success pull-right f360-navbar-button" ng-click="update()">
+			<span class="glyphicon glyphicon-ok"></span>
+		</a>
+		<div class="navbar-header">
+			<span class="navbar-brand">Edit Form</span>
+		</div>
+	</div>
+</div>
+<br/>
+Name
+<input ng-model="editWidget.name" class="form-control" placeholder="Name"/>
+Type
+<select ng-model="editWidget.type" class="form-control">
+	<option>Form</option>
+	<option>YouTube Video</option>
+	<option>Image</option>
+</select>
+Notes
+<textarea ng-model="editWidget.notes" class="form-control" placeholder="Notes">
+
+</textarea>
+<a	href="#"
+	ng-click="remove()"
+	class="btn btn-danger btn-block">
+	Remove
+</a>

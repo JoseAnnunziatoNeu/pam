@@ -1,0 +1,49 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<style>
+	.f360-navbar-button {
+		position: relative;
+		top: 7px;
+	}
+	.f360-right-arrow {
+		font-size: 1.5em;
+	}
+	ul
+	{
+	    list-style-type: none;
+	    padding-left: 0px;
+	}
+</style>
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<a href="#/{{username}}/applications/{{applicationId}}/pages/list" class="btn btn-danger pull-left f360-navbar-button">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a href="#/{{username}}/applications/{{applicationId}}/pages/{{pageId}}/widgets/new" class="btn btn-success pull-right f360-navbar-button">
+			<span class="glyphicon glyphicon-plus"></span>
+		</a>
+		<div class="navbar-header">
+			<span class="navbar-brand">Widgets</span>
+		</div>
+	</div>
+</div>
+<ul>
+	<li ng-repeat="widget in widgets">
+		<!--a href="#/{{username}}/applications/{{applicationId}}/pages/{{pageId}}/widgets/{{widget._id}}/{{widget.type}}/edit" class="pull-right">
+			<span class="glyphicon glyphicon-pencil f360-right-arrow"></span>
+		</a-->
+		<span ng-switch="widget.type" ng-click="edit(widget)">
+			<input ng-switch-when="TEXT" type="text" placeholder="Text Widget" class="form-control"/>
+			<button ng-switch-when="BUTTON" class="btn btn-block btn-primary">Button Widget</button>
+			<select ng-switch-when="DROPDOWN" class="form-control">
+					<option>Dropdown Widget</option>
+			</select>
+			<textarea ng-switch-when="TEXT_AREA" class="form-control">Text Area Widget</textarea>
+			<input ng-switch-when="DATE" type="date" class="form-control"/>
+			<input ng-switch-when="TIME" type="time" type="time" class="form-control"/>
+		</span>
+	</li>
+</ul>
+</table>

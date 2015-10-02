@@ -1,0 +1,53 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<style>
+	.f360-navbar-button {
+		position: relative;
+		top: 7px;
+	}
+	input[type=date] {
+		width: 100%;
+	}
+</style>
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<a	href="#/{{username}}/applications/{{applicationId}}/entities/{{entityId}}/fields/list" class="btn btn-danger pull-left f360-navbar-button">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a	href="#" class="btn btn-success pull-right f360-navbar-button"
+			ng-click="create()">
+			<span class="glyphicon glyphicon-ok"></span>
+		</a>
+		<div class="navbar-header">
+			<span class="navbar-brand">New Field</span>
+		</div>
+	</div>
+</div>
+
+<label>Name</label>
+<input ng-model="field.name" class="form-control" placeholder="Name"/>
+<label>Type</label>
+<select ng-model="field.type" class="form-control">
+	<option ng-repeat="type in types">{{type}}</option>
+</select>
+<span ng-show="field.type=='Collection'">
+<label>Collection of</label>
+<select ng-model="field.reference" class="form-control">
+	<option value="">No Reference</option>
+	<option ng-repeat="reference in references">{{reference.name}}</option>
+</select>
+</span>
+<span ng-show="field.type=='Mapped'">
+<label>Mapped To</label>
+<select ng-model="field.mapping" class="form-control">
+	<option value="">No Reference</option>
+	<option ng-repeat="reference in references">{{reference.name}}</option>
+</select>
+</span>
+<label>Notes</label>
+<textarea ng-model="field.notes" class="form-control" placeholder="Notes">
+
+</textarea>
+<input type="hidden" ng-model="field.entity_id"/>

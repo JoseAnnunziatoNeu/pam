@@ -1,0 +1,41 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<style>
+	.f360-navbar-button {
+		position: relative;
+		top: 7px;
+	}
+</style>
+
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<a	href="#/{{username}}/applications/{{applicationId}}/pages/{{pageId}}/widgets/list" class="btn btn-danger pull-left f360-navbar-button">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a	href="#" class="btn btn-success pull-right f360-navbar-button" ng-click="updateYouTube()">
+			<span class="glyphicon glyphicon-ok"></span>
+		</a>
+		<div class="navbar-header">
+			<span class="navbar-brand">Form Elements</span>
+		</div>
+	</div>
+</div>
+<br/>
+<br/>
+<br/>
+
+<table class="table">
+	<tr ng-repeat="formControl in formControls">
+		<td>
+			<a href="#/{{username}}/applications/{{applicationId}}/pages/{{pageId}}/widgets/{{widget._id}}/{{widget.type}}/edit" class="pull-right">
+				<span class="glyphicon glyphicon-chevron-right f360-right-arrow"></span>
+			</a>
+			<a href="#/{{username}}/applications/{{applicationId}}/pages/{{pageId}}/widgets/{{widget._id}}/edit">
+			{{widget.name}}<br>
+			{{widget.type}}
+			</a>
+		</tr>
+	</tr>
+</table>

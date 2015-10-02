@@ -1,0 +1,139 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<a	href="#/{{username}}/applications/{{applicationId}}/entities/{{entityId}}/fields/{{fieldId}}/fieldScripts/{{parentId}}/statements/list" class="btn btn-danger pull-left f360-navbar-button">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<button class="btn btn-success pull-right f360-navbar-button" ng-click="update()">
+			<span class="glyphicon glyphicon-ok"></span>
+		</button>
+		<div class="navbar-header">
+			<span class="navbar-brand">Edit Statement</span>
+		</div>
+	</div>
+</div>
+
+<label>Title</label>
+<input ng-model="model.title" class="form-control" placeholder="Title"/>
+<label>Name</label>
+<input ng-model="model.name" class="form-control" placeholder="Name"/>
+<label>Statement Type</label>
+<select ng-model="model.type" class="form-control">
+	<option>Variable</option>
+	<option>Arithmetic</option>
+	<option>Transform</option>
+	<option>String</option>
+	<option>Boolean</option>
+	<option>Comparison</option>
+	<option>Alert</option>
+</select>
+<span ng-show="model.type=='String'">
+	<label>String Operation</label>
+	<select ng-model="model.string.operation" class="form-control">
+		<option>Substring</option>
+		<option>Replace</option>
+		<option>Index Of</option>
+		<option>Starts With</option>
+		<option>Ends With</option>
+		<option>Concatenate</option>
+	</select>
+</span>
+<span ng-show="model.string.operation=='Substring'">
+	<label>Start Index</label>
+	<input ng-model="model.string.substring.start" class="form-control" placeholder="Start Index" type="number"/>
+	<label>End Index</label>
+	<input ng-model="model.string.substring.end" class="form-control" placeholder="Start Index" type="number"/>
+</span>
+<span ng-show="model.string.operation=='Replace'">
+	<label>Replace All Occurences Of This String</label>
+	<input ng-model="model.string.replace.searchString" class="form-control" placeholder="Search String" type="text"/>
+	<label>With This String</label>
+	<input ng-model="model.string.replace.replaceString" class="form-control" placeholder="Replace String" type="text"/>
+</span>
+<span ng-show="model.string.operation=='Index Of'">
+	<label>Find Index of this String</label>
+	<input ng-model="model.string.indexOf.substring" class="form-control" placeholder="Search String" type="text"/>
+	<label>In this String</label>
+	<input ng-model="model.string.indexOf.string" class="form-control" placeholder="In String" type="text"/>
+</span>
+<span ng-show="model.type=='Alert'">
+	<label>Message</label>
+	<input ng-model="model.alert.message" class="form-control" placeholder="Alert Message"/>
+</span>
+<span ng-show="model.type=='Variable'">
+	<label>Variable Name</label>
+	<input ng-model="model.variable.name" class="form-control" placeholder="Variable Name"/>
+	<label>Default Value</label>
+	<input ng-model="model.variable.defaultValue" class="form-control" placeholder="Default Value"/>
+</span>
+<span ng-show="model.type=='Boolean'">
+	<label>Boolean Operation</label>
+	<select ng-model="model.boolean.operation" class="form-control">
+		<option>And</option>
+		<option>Or</option>
+		<option>Not</option>
+	</select>
+</span>
+<span ng-show="model.type=='Comparison'">
+	<label>Comparison Operation</label>
+	<select ng-model="model.comparison.operation" class="form-control">
+		<option>Equal To</option>
+		<option>Greater Than</option>
+		<option>Greater Than Or Equal To</option>
+		<option>Less Than</option>
+		<option>Less Than Or Equal To</option>
+	</select>
+</span>
+<span ng-show="model.type=='Arithmetic'">
+	<label>Arithmetic Operation</label>
+	<select ng-model="model.arithmetic.operation" class="form-control">
+		<option>Add</option>
+		<option>Subtract</option>
+		<option>Multiply</option>
+		<option>Divide</option>
+		<option>Equal To</option>
+		<option>Greater Than</option>
+		<option>Greater Than Or Equal To</option>
+		<option>Less Than</option>
+		<option>Less Than Or Equal To</option>
+	</select>
+</span>
+<span ng-show="model.type=='Arithmetic' || model.type=='Comparison' || model.type=='Boolean'">
+<label>Parameter 1</label>
+<select ng-model="model.parameter1" class="form-control">
+	<option>Variable 1</option>
+	<option>Variable 2</option>
+	<option>Variable 3</option>
+	<option>Variable 4</option>
+</select>
+</span>
+<span ng-show="model.type=='Arithmetic' || model.type=='Comparison' || model.type=='Boolean'">
+<label>Parameter 2</label>
+<select ng-model="model.parameter2" class="form-control">
+	<option>Variable 1</option>
+	<option>Variable 2</option>
+	<option>Variable 3</option>
+	<option>Variable 4</option>
+</select>
+</span>
+<span ng-show="model.type=='Arithmetic' || model.type=='Comparison' || model.type=='Boolean' || model.type=='String'">
+<label>Put Result In</label>
+<select ng-model="model.result" class="form-control">
+	<option>Variable 1</option>
+	<option>Variable 2</option>
+	<option>Variable 3</option>
+	<option>Variable 4</option>
+</select>
+</span>
+<label>Notes</label>
+<textarea ng-model="model.notes" class="form-control" placeholder="Notes">
+
+</textarea>
+<a	href="#"
+	ng-click="remove()"
+	class="btn btn-danger btn-block">
+	Remove
+</a>

@@ -1,0 +1,44 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<style>
+	.f360-navbar-button {
+		position: relative;
+		top: 7px;
+	}
+</style>
+
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<a	href="#/{{username}}/applications/{{applicationId}}/pages/{{pageId}}/widgets/list" class="btn btn-danger pull-left f360-navbar-button">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a	href="#" class="btn btn-success pull-right f360-navbar-button" ng-click="updateTextWidget()">
+			<span class="glyphicon glyphicon-ok"></span>
+		</a>
+		<div class="navbar-header">
+			<span class="navbar-brand">Edit Text Widget</span>
+		</div>
+	</div>
+</div>
+Name
+<input ng-model="widget.name" class="form-control" placeholder="Name"/>
+Label
+<input ng-model="widget.label" class="form-control" placeholder="Label"/>
+<input ng-model="widget.required" type="checkbox"/>
+Required
+<br/>
+Default Value
+<input ng-model="widget.defaultValue" class="form-control" placeholder="Default Value"/>
+Placeholder
+<input ng-model="widget.placeholder" class="form-control" placeholder="Placeholder"/>
+Notes
+<textarea ng-model="widget.notes" class="form-control" placeholder="Notes">
+
+</textarea>
+<a	href="#"
+	ng-click="remove()"
+	class="btn btn-danger btn-block">
+	Remove
+</a>

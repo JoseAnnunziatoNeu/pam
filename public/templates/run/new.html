@@ -1,0 +1,50 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<a	href="#/list/{{username}}/{{application}}/{{state}}/{{collection}}" class="btn btn-danger pull-left f360-navbar-button">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<button class="btn btn-success pull-right f360-navbar-button"
+			ng-click="create()">
+			<span class="glyphicon glyphicon-ok"></span>
+		</button>
+		<div class="navbar-header">
+			<span class="navbar-brand">New {{collection}}</span>
+		</div>
+	</div>
+</div>
+
+<div ng-repeat="field in fields">
+
+	<span ng-switch="field.type">
+		<span ng-switch-when="Button">
+			{{field.name}}
+			<input ng-model="model[field.name]" type="text" placeholder="{{field.name}}" class="form-control"/>
+		</span>
+		<span ng-switch-when="String">
+			{{field.name}}
+			<input ng-model="model[field.name]" type="text" placeholder="{{field.name}}" class="form-control"/>
+		</span>
+		<span ng-switch-when="Long String">
+			{{field.name}}
+<textarea ng-model="model[field.name]" placeholder="{{field.name}}" class="form-control">
+
+</textarea>
+		</span>
+		<span ng-switch-when="Number">
+			{{field.name}}
+			<input ng-model="model[field.name]" type="number" placeholder="{{field.name}}" class="form-control"/>
+		</span>
+		<span ng-switch-when="Date" >
+			{{field.name}}
+			<input ng-model="model[field.name]" type="date" class="form-control"/>
+		</span>
+		<span ng-switch-when="Time" >
+			{{field.name}}
+			<input ng-model="model[field.name]" type="time" class="form-control"/>
+		</span>
+	</span>
+</div>

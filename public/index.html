@@ -1,0 +1,73 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name = "viewport" content = "initial-scale = 1.25, user-scalable = no">
+    <link rel="apple-touch-icon" href="img/icon.png">
+    <script src="js/utility.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/pam.js"></script>
+    <script src="js/sortable.js"></script>
+    <script src="js/users.js"></script>
+    <script src="js/applications.js"></script>
+    <script src="js/entities.js"></script>
+    <script src="js/run.js"></script>
+    <script src="js/fields.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/statements.js"></script>
+    <script src="js/childFields.js"></script>
+    <script src="js/pages.js"></script>
+    <script src="js/widgets.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/appStore.js"></script>
+    <!--script src="js/youtube.js"></script-->
+    <!--script src="js/addtohomescreen.min.js"></script-->
+    <!--link href="css/addtohomescreen.css" rel="stylesheet" /-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/jquery-ui.css" rel="stylesheet" />
+    
+    <!--link href="css/f360.css" rel="stylesheet" />
+    <link href="css/jga.css" rel="stylesheet" /-->
+    
+    <title></title>
+    <style>
+	input, select, textarea {
+		margin-bottom: 5px;
+	}
+	.table>tbody>tr:first-child>td {
+		border-top: 0px solid #dddddd; *
+	}
+	body {
+		padding-top: 55px;
+	}
+	button.btn {
+		margin-bottom: 5px;
+	}
+	.f360-navbar-button {
+		position: relative;
+		top: 7px;
+	}
+	.f360-right-arrow {
+		font-size: 1.5em;
+	}
+    </style>
+    
+    
+</head>
+<body>
+    <div class="container" ng-app="pam">
+        <div class="row">
+            <div class="col-xs-12" ng-view>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

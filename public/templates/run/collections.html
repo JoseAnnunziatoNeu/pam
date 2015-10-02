@@ -1,0 +1,26 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a ng-if="currentUser.type === 'User'" href="#/{{username}}/run/applications/list" class="btn btn-danger pull-left f360-navbar-button">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <span class="navbar-brand">Collections</span>
+        </div>
+    </div>
+</div>
+<table class="table">
+    <tr ng-repeat="collection in collections">
+        <td>
+            <a class="pull-right" href="#/list/{{username}}/{{application}}/null/null/{{collection.name}}">
+                <span class="glyphicon glyphicon-chevron-right f360-right-arrow"></span>
+            </a>
+            <a href="#/list/{{username}}/{{application}}/null/null/{{collection.name}}">
+                <span>{{collection.name}}</span><br />
+            </a>
+    </tr>
+    </tr>
+</table>

@@ -1,0 +1,22 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<h2>
+<a	href="#/login"
+	class="btn btn-danger">
+	Back
+</a>
+Register
+</h2>
+<input ng-model="newUser.username" class="form-control" placeholder="Username" />
+<input ng-model="newUser.email" class="form-control" placeholder="Email" />
+<select ng-model="newUser.type" class="form-control">
+	<option ng-repeat="type in userTypes">{{type}}</option>
+</select>
+<input ng-model="newUser.password" class="form-control" placeholder="Password" type="password"/>
+<input ng-model="newUser.password2" class="form-control" placeholder="Password Again" type="password"/>
+<a href="#register" ng-click="register()" class="btn btn-primary btn-block">
+	Register
+</a>
+<span>{{message}}</span>

@@ -1,0 +1,45 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<style>
+	.f360-navbar-button {
+		position: relative;
+		top: 7px;
+	}
+</style>
+
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<a	href="#/{{username}}/applications/list" class="btn btn-danger pull-left f360-navbar-button">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a	href="#" class="btn btn-success pull-right f360-navbar-button" ng-click="update()">
+			<span class="glyphicon glyphicon-ok"></span>
+		</a>
+		<div class="navbar-header">
+			<span class="navbar-brand">Edit Application</span>
+		</div>
+	</div>
+</div>
+
+<label>Name</label>
+<input ng-model="editApplication.name" class="form-control" placeholder="Name"/>
+
+<button class="btn btn-block btn-success" ng-click="run()">Run</button>
+
+<label>Root Entity</label>
+<select class="form-control" ng-model="editApplication.rootEntity">
+	<option value="None">None</option>
+	<option ng-repeat="entity in entities" value="{{entity.name}}">{{entity.name}}</option>
+</select>
+
+<label>Notes</label>
+<textarea ng-model="editApplication.notes" class="form-control" placeholder="Notes">
+
+</textarea>
+<a	href="#"
+	class="btn btn-danger btn-block"
+	ng-click="remove()">
+	Delete
+</a>

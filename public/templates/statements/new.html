@@ -1,0 +1,25 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<a	href="#/{{username}}/applications/{{applicationId}}/entities/{{entityId}}/fields/{{fieldId}}/fieldScripts/{{parentId}}/statements/list" class="btn btn-danger pull-left f360-navbar-button">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<button class="btn btn-success pull-right f360-navbar-button"
+			ng-click="create()">
+			<span class="glyphicon glyphicon-ok"></span>
+		</button>
+		<div class="navbar-header">
+			<span class="navbar-brand">New Statement</span>
+		</div>
+	</div>
+</div>
+
+<label>Name</label>
+<input ng-model="statement.name" class="form-control" placeholder="Name"/>
+<label>Notes</label>
+<textarea ng-model="statement.notes" class="form-control" placeholder="Notes">
+
+</textarea>

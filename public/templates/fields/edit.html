@@ -1,0 +1,86 @@
+﻿<!--
+© 2014 Jose Annunziato
+All Rights Reserved
+-->
+<style>
+	.f360-navbar-button {
+		position: relative;
+		top: 7px;
+	}
+</style>
+
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<a	href="#/{{username}}/applications/{{applicationId}}/entities/{{entityId}}/fields/list" class="btn btn-danger pull-left f360-navbar-button">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a	href="#" class="btn btn-success pull-right f360-navbar-button" ng-click="update()">
+			<span class="glyphicon glyphicon-ok"></span>
+		</a>
+		<div class="navbar-header">
+			<span class="navbar-brand">Edit Field</span>
+		</div>
+	</div>
+</div>
+
+<label>Title</label>
+<input ng-model="field.title" class="form-control" placeholder="Name"/>
+<label>Name</label>
+<input ng-model="field.name" class="form-control" placeholder="Name"/>
+<label>Type</label>
+<select ng-model="field.type" class="form-control">
+	<option ng-repeat="type in types">{{type}}</option>
+</select>
+<span ng-show="field.type=='Button'">
+	<label>Button Label</label>
+	<input ng-model="field.button.label"  class="form-control" placeholder="Button Label"/>
+	<label>Button Style</label>
+	<select ng-model="field.button.style" class="form-control">
+		<option value="default">Default</option>
+		<option value="primary">Primary</option>
+		<option value="success">Success</option>
+		<option value="info">Info</option>
+		<option value="warning">Warning</option>
+		<option value="danger">Danger</option>
+	</select>
+</span>
+<label>Default Value</label>
+<span ng-show="field.type=='Number'">
+<input ng-model="field.default.value" type="number" class="form-control" placeholder="Button Label"/>
+</span>
+<span ng-show="field.type=='String'">
+<input ng-model="field.default.value" type="text" class="form-control" placeholder="Button Label"/>
+</span>
+<span ng-show="field.type=='Long String'">
+<textarea ng-model="field.default.value" class="form-control" placeholder="Button Label">
+
+</textarea>
+</span>
+<span ng-show="field.type=='Collection'">
+<label>Collection of</label>
+<select ng-model="field.reference" class="form-control">
+	<option value="">No Reference</option>
+	<option ng-repeat="reference in references">{{reference.name}}</option>
+</select>
+</span>
+</span>
+<span ng-show="field.type=='Mapped'">
+<label>Mapped To</label>
+<select ng-model="field.mapping" class="form-control">
+	<option value="">No Reference</option>
+	<option ng-repeat="reference in references">{{reference.name}}</option>
+</select>
+</span>
+<label>Notes</label>
+<textarea ng-model="field.notes" class="form-control" placeholder="Notes">
+
+</textarea>
+<!--a href="#/{{username}}/applications/{{applicationId}}/entities/{{entityId}}/fields/{{fieldId}}/fieldScripts/list" class="btn btn-primary btn-block">
+	<span style="position:relative;left:12px">Scripts</span>
+	<span class="pull-right glyphicon glyphicon-chevron-right" style="margin-right:10px"></span>
+</a-->
+<a	href="#"
+	ng-click="remove()"
+	class="btn btn-danger btn-block">
+	Remove
+</a>
